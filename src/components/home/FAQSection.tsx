@@ -24,13 +24,15 @@ const FAQ_ITEMS: FAQItem[] = [
   },
   {
     audience: 'Individual User', audienceColor: 'white',
-    q: 'What is an IP-NFT and how do I earn money from my biological data?',
-    a: 'An IP-NFT is a blockchain token representing your legal ownership of a verified biological insight — a title deed for your genome. When a pharma company or research institution uses your dataset, a smart contract automatically distributes your chosen royalty percentage to your wallet. No middleman, no waiting. You set the license terms, the rate, and who gets access.',
+    q: 'What is an IP-NFT and how is my biological data recorded?',
+    a: 'An IP-NFT is a blockchain token representing your legal ownership of a verified biological insight — a title deed for your genome. Every research use of your data is recorded permanently on Ethereum — a verifiable, portable proof of your biological contribution. You set the license terms, the scope, and who gets access.',
   },
+
   {
     audience: 'Investor', audienceColor: 'teal',
     q: 'What fundamentally differentiates SYNTIX from Nebula Genomics or EncrypGen?',
-    a: "Nebula and EncrypGen are marketplaces — they still hold your data. SYNTIX is a compute protocol. We never hold raw data. FHE means all computation happens on encrypted inputs; Story Protocol integration makes every dataset a registered IP asset generating on-chain royalties. We're the cryptographic infrastructure layer these platforms could run on top of — not another biobank with better branding.",
+    a: "Nebula and EncrypGen are marketplaces — they still hold your data. SYNTIX is a compute protocol. We never hold raw data. FHE means all computation happens on encrypted inputs; Ethereum integration makes every dataset a registered IP asset with verifiable on-chain contribution records. We're the cryptographic infrastructure layer these platforms could run on top of — not another biobank with better branding.",
+
   },
   {
     audience: 'Privacy', audienceColor: 'indigo',
@@ -40,7 +42,8 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     audience: 'Blockchain Novice', audienceColor: 'white',
     q: 'Do I need to understand crypto or blockchain to use SYNTIX?',
-    a: "No — this was a core design requirement. Your BioWallet abstracts all blockchain complexity. Connecting takes under 60 seconds; we handle wallet creation, key management, and on-chain transactions in the background. Royalties appear in a clean dashboard. You never need to know what gas fees or smart contracts are. The protocol layer is there for developers who want it — never required for end users.",
+    a: "No — this was a core design requirement. Your BioWallet abstracts all blockchain complexity. Connecting takes under 60 seconds; we handle wallet creation, key management, and on-chain transactions in the background. Your contribution records appear in a clean dashboard. You never need to know what gas fees or smart contracts are. The protocol layer is there for developers who want it — never required for end users.",
+
   },
 ];
 
@@ -111,8 +114,9 @@ const FinalCTA = () => (
           </strong>
         </h3>
         <p className="text-gray-400 mb-10 max-w-md mx-auto font-light leading-relaxed">
-          Join the waitlist — be among the first to turn your biological data into sovereign, royalty-generating IP.
+          Join the waitlist — be among the first to turn your biological data into sovereign, verifiable biological IP.
         </p>
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button className="group relative inline-flex items-center gap-2.5 px-10 py-4 bg-biomarker text-hero text-sm font-bold uppercase tracking-widest rounded-sm overflow-hidden transition-all duration-300 shadow-[0_0_40px_rgba(0,229,255,0.25)] hover:shadow-[0_0_70px_rgba(0,229,255,0.55)]">
             <span className="relative z-10 flex items-center gap-2.5">

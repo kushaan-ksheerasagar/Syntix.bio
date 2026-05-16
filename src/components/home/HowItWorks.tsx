@@ -113,19 +113,21 @@ const STEPS: Step[] = [
   {
     number: '03',
     icon: <MintNFTIcon />,
-    label: 'IP-NFT MINT',
-    title: 'Mint your biological IP',
+    label: 'ON-CHAIN CONTRIBUTION',
+    title: 'Record your biological contribution',
     description:
-      'Your verified health insights are registered on-chain as a Programmable IP-NFT via the Story Protocol. Every time a pharmaceutical company or research institution uses your dataset, a smart contract distributes royalties directly to your wallet — automatically, transparently, on your terms.',
+      'Every research use of your data is recorded permanently on Ethereum — a verifiable, portable proof of your biological contribution.',
+
     terminal: [
-      { text: '$ ipnft.mint(proof, {',                      type: 'cmd'     },
-      { text: '    royalty:  "15%",',                       type: 'muted'   },
-      { text: '    license:  "Research-Only",',             type: 'muted'   },
-      { text: '    owner:    wallet_0x8f3a,',               type: 'muted'   },
+      { text: '$ contribution.record(proof, {',              type: 'cmd'     },
+      { text: '    contribution: "Verified",',              type: 'muted'   },
+      { text: '    license:      "Research-Only",',         type: 'muted'   },
+      { text: '    owner:        wallet_0x8f3a,',           type: 'muted'   },
       { text: '  })',                                        type: 'cmd'     },
-      { text: '  ✓ Token #2847 minted on Story Protocol',   type: 'success' },
-      { text: '  ✓ Royalty stream: active',                 type: 'success' },
+      { text: '  ✓ Contribution #2847 recorded on Ethereum', type: 'success' },
+      { text: '  ✓ Proof of contribution: permanent',        type: 'success' },
     ],
+
   },
 ];
 

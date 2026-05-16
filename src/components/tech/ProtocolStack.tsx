@@ -25,9 +25,10 @@ const LAYERS = [
     tier: 'Layer 02',
     label: 'The Asset Layer',
     sublabel: 'Programmable IP',
-    tech: ['Story Protocol', 'IP-NFTs'],
+    tech: ['Ethereum Mainnet', 'IP-NFTs'],
     function:
-      'Every biomarker insight is minted as a programmable IP-NFT. This allows users to license their data to research labs or clinical trials autonomously, maintaining 100% royalty control.',
+      'Every biomarker insight is minted as a programmable IP-NFT. This allows users to license their data to research labs or clinical trials autonomously, maintaining verifiable on-chain contribution records.',
+
     color: '#818CF8',   // indigo
     hex: 'indigo',
     glow: 'rgba(129,140,248,0.18)',
@@ -58,7 +59,8 @@ const ARCH_NODES = [
   { id: 'fhe',    label: 'FHE\nEncryption',     x: '30%',  y: '25%', color: '#00E5FF' },
   { id: 'zkp',    label: 'ZKP\nVerifier',       x: '30%',  y: '75%', color: '#818CF8' },
   { id: 'ai',     label: 'AI Model\n(Blind)',    x: '55%',  y: '50%', color: '#00E5FF' },
-  { id: 'ip',     label: 'Story\nProtocol',     x: '78%',  y: '25%', color: '#818CF8' },
+  { id: 'ip',     label: 'Ethereum\nMainnet',     x: '78%',  y: '25%', color: '#818CF8' },
+
   { id: 'result', label: 'Health\nInsight',     x: '90%',  y: '50%', color: '#FFFFFF' },
 ];
 
@@ -172,10 +174,11 @@ const NODE_TOOLTIPS: Record<string, { title: string; lines: string[]; color: str
     color: '#00E5FF',
   },
   ip: {
-    title: 'STORY_PROTOCOL',
-    lines: ['minting: IP-NFT #8821...', 'royalty: 100% USER', 'tx: 0xf7...3b'],
+    title: 'ETHEREUM_MAINNET',
+    lines: ['minting: IP-NFT #8821...', 'contribution: VERIFIED', 'tx: 0xf7...3b'],
     color: '#818CF8',
   },
+
   result: {
     title: 'HEALTH_INSIGHT',
     lines: ['decrypt: CLIENT_SIDE_ONLY', 'risk_score: COMPUTED', 'integrity: VERIFIED'],

@@ -6,7 +6,8 @@ import { useRouter } from 'next/navigation';
 
 const TICKER_ITEMS = [
   'Zero-Knowledge Proofs', 'FHE Computation', 'IP-NFT Minting',
-  'Data Sovereignty', 'Royalty Distribution', 'BioWallet Authentication',
+  'Data Sovereignty', 'Contribution Records', 'BioWallet Authentication',
+
   'Genomic Privacy', 'On-Chain Provenance', 'HIPAA Compliant', 'Blind Compute',
 ];
 
@@ -144,7 +145,8 @@ const HeroSection = () => {
           <motion.p variants={itemVariants}
             className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto mt-8 mb-12 leading-relaxed font-light">
             FHE computes on your encrypted genome. ZK Proofs verify the result.
-            IP-NFTs convert your biology into programmable, royalty-generating intellectual property.
+            IP-NFTs convert your biology into programmable, verifiable intellectual property.
+
           </motion.p>
 
           {/* Dual CTA */}

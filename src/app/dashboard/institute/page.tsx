@@ -73,9 +73,10 @@ const AnalyticsTab = () => (
   <div className="space-y-6">
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
       <StatCard label="Datasets Accessed" value="14"      sub="FHE computations run"    color="text-indigo"/>
-      <StatCard label="Active Licenses"   value="3"       sub="via Story Protocol PIL"  color="text-biomarker"/>
+      <StatCard label="Active Licenses"   value="3"       sub="via Ethereum IP-NFT"     color="text-biomarker"/>
       <StatCard label="Insights Delivered" value="1,204"  sub="ZK-verified results"     color="text-white"/>
-      <StatCard label="Spend This Month"  value="5,140 SP" sub="Story Protocol tokens"  color="text-indigo"/>
+      <StatCard label="Spend This Month"  value="0.42 ETH" sub="Network usage fees"     color="text-indigo"/>
+
     </div>
     <div className="h-[320px]">
       <BiomarkerHeatmap/>
@@ -108,11 +109,12 @@ interface Dataset {
 }
 
 const DATASETS: Dataset[] = [
-  { id: 'DS-001', name: 'Whole Genome Sequencing — Diverse Cohort',  size: '2.4 TB', tags: ['WGS','Ancestry','PRS'],      guardians: 412,  price: '3,200 SP',  category: 'Genomics'        },
-  { id: 'DS-002', name: 'Pharmacogenomics — CPIC Level A/B Panel',   size: '180 GB', tags: ['PGx','Drug Response'],       guardians: 889,  price: '1,450 SP',  category: 'Pharmacogenomics'},
-  { id: 'DS-003', name: 'Metabolic Biomarker Longitudinal Study',    size: '94 GB',  tags: ['Metabolomics','Glucose'],     guardians: 2140, price: '2,100 SP',  category: 'Metabolomics'    },
-  { id: 'DS-004', name: 'Neurodegenerative Variant Dataset',          size: '310 GB', tags: ['Alzheimer\'s','APOE'],       guardians: 673,  price: '4,800 SP',  category: 'Neurology'       },
-  { id: 'DS-005', name: 'Cardiovascular Polygenic Risk Scores',       size: '45 GB',  tags: ['PRS','CAD','AFib'],         guardians: 3201, price: '980 SP',    category: 'Cardiovascular'  },
+  { id: 'DS-001', name: 'Whole Genome Sequencing — Diverse Cohort',  size: '2.4 TB', tags: ['WGS','Ancestry','PRS'],      guardians: 412,  price: '0.12 ETH',  category: 'Genomics'        },
+  { id: 'DS-002', name: 'Pharmacogenomics — CPIC Level A/B Panel',   size: '180 GB', tags: ['PGx','Drug Response'],       guardians: 889,  price: '0.04 ETH',  category: 'Pharmacogenomics'},
+  { id: 'DS-003', name: 'Metabolic Biomarker Longitudinal Study',    size: '94 GB',  tags: ['Metabolomics','Glucose'],     guardians: 2140, price: '0.08 ETH',  category: 'Metabolomics'    },
+  { id: 'DS-004', name: 'Neurodegenerative Variant Dataset',          size: '310 GB', tags: ['Alzheimer\'s','APOE'],       guardians: 673,  price: '0.15 ETH',  category: 'Neurology'       },
+  { id: 'DS-005', name: 'Cardiovascular Polygenic Risk Scores',       size: '45 GB',  tags: ['PRS','CAD','AFib'],         guardians: 3201, price: '0.03 ETH',  category: 'Cardiovascular'  },
+
 ];
 
 const MarketplaceTab = () => {
@@ -171,7 +173,8 @@ const MarketplaceTab = () => {
             </div>
             <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/[0.05]">
               <div className="flex items-center gap-1.5 text-xs text-gray-500">
-                <Shield size={11} className="text-green-400"/> FHE Encrypted · ZK Verified · Story Protocol PIL
+                <Shield size={11} className="text-green-400"/> FHE Encrypted · ZK Verified · Ethereum PIL
+
               </div>
               <button
                 onClick={() => setRequestDs(ds)}
@@ -280,9 +283,10 @@ const MarketplaceTab = () => {
 
 const LicensesTab = () => {
   const licenses = [
-    { name: 'Metabolic Syndrome Study Q3',   provider: 'Stanford Protocol',  status: 'Processing FHE',    cost: '2,100 SP', expires: '2026-07-12', progress: 65 },
-    { name: 'Longevity Gene Mapping',         provider: 'Global Node Pool',   status: 'Active Access',     cost: '3,450 SP', expires: '2026-08-30', progress: 100},
-    { name: 'Neurodegenerative Analysis',     provider: 'Oxford Biobank',     status: 'Awaiting Approval', cost: '4,800 SP', expires: '—',          progress: 20 },
+    { name: 'Metabolic Syndrome Study Q3',   provider: 'Stanford Protocol',  status: 'Processing FHE',    cost: '0.08 ETH', expires: '2026-07-12', progress: 65 },
+    { name: 'Longevity Gene Mapping',         provider: 'Global Node Pool',   status: 'Active Access',     cost: '0.12 ETH', expires: '2026-08-30', progress: 100},
+    { name: 'Neurodegenerative Analysis',     provider: 'Oxford Biobank',     status: 'Awaiting Approval', cost: '0.15 ETH', expires: '—',          progress: 20 },
+
   ];
 
   const statusIcon = (s: string) => {
@@ -342,7 +346,8 @@ const ComputeTab = () => {
     { time: '08:14:27', text: 'Partial result received: aggregated_HbA1c = OK',   type: 'result' },
     { time: '08:14:31', text: 'Verifying ZK-SNARK proof for node batch #4...',    type: 'info'   },
     { time: '08:14:34', text: 'Proof valid · Groth16 · 0x8f12...44c3',           type: 'result' },
-    { time: '08:14:38', text: 'BAA auto-generated and logged on Story Protocol.', type: 'result' },
+    { time: '08:14:38', text: 'BAA auto-generated and logged on Ethereum.', type: 'result' },
+
   ]);
 
   const jobs = [
@@ -460,7 +465,8 @@ export default function InstituteDashboard() {
               <p className="text-gray-500 text-sm mt-1">
                 {active === 'analytics'   && 'Ethical Access & Distributed Compute Monitoring'}
                 {active === 'marketplace' && 'Browse and license anonymized genomic datasets'}
-                {active === 'licenses'    && 'Programmable IP Licenses via Story Protocol'}
+                {active === 'licenses'    && 'Programmable IP Licenses via Ethereum'}
+
                 {active === 'compute'     && 'Live FHE workloads across distributed H100 nodes'}
               </p>
             </div>

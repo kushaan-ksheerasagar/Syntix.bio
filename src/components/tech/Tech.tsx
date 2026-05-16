@@ -5,31 +5,33 @@ import { motion, useInView } from 'framer-motion';
 
 const METRICS = [
   {
-    value: '100+',
-    label: 'Biomarkers',
-    sub: 'Unified into one encrypted sentinel score',
+    value: '80+',
+    label: 'Trait Insights',
+    sub: 'Evidence-backed genomic interpretation across metabolism, sleep, neurology, fitness, and more.',
     color: '#00E5FF',
   },
   {
-    value: '<10ms',
-    label: 'Encrypted Latency',
-    sub: 'FHE compute round-trip, p95 benchmark',
+    value: '25+',
+    label: 'Drug-Gene Interactions',
+    sub: 'CPIC-guided pharmacogenomic analysis for medication response insights.',
     color: '#6366F1',
   },
   {
-    value: '$4,500',
-    label: 'Per ADR Prevented',
-    sub: 'Cost basis: AHRQ 2023 — Adverse Drug Reactions',
+    value: '100%',
+    label: 'User-Controlled Permissions',
+    sub: 'Transparent permissions, auditability, and consent-based genomic data governance.',
     color: '#8B5CF6',
   },
 ];
+
 
 export const Tech = () => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="roi" className="py-24 bg-global border-t border-gray-100">
+    <section id="capabilities" className="py-24 bg-global border-t border-gray-100">
+
       <div ref={ref} className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
           {METRICS.map((m, i) => (

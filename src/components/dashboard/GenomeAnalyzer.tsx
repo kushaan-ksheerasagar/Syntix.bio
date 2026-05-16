@@ -90,8 +90,9 @@ Polygenic Risk Score for CAD: 34th percentile (low-moderate). HDL genetics are f
 This report was computed entirely under Fully Homomorphic Encryption. Your raw genomic sequence was never decrypted at any point during analysis. This Zero-Knowledge proof (Groth16) confirms computation integrity without revealing your underlying data.
 
 Proof Hash: 0x7d2f91a...
-Verified on: Story Protocol Testnet (Sepolia)
-IP-NFT ID: Pending mint confirmation
+Verified on: Ethereum Testnet (Sepolia)
+Contribution ID: Pending confirmation
+
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⚠ DISCLAIMER: For educational & wellness purposes only. Not a clinical diagnosis. Consult a licensed healthcare professional before making any health decisions.`;
@@ -313,7 +314,8 @@ const ReportTab = () => {
             {minting ? (
               <span className="flex items-center gap-2">
                 <span className="w-4 h-4 rounded-full border-2 border-hero border-t-transparent animate-spin" />
-                Minting IP-NFT on Story Protocol...
+                Recording contribution on Ethereum...
+
               </span>
             ) : (
               <>
@@ -321,7 +323,8 @@ const ReportTab = () => {
                   <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.4"/>
                   <path d="M4 7h6M7 4v6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
                 </svg>
-                Mint Genome as IP-NFT
+                Record Genome Contribution
+
               </>
             )}
           </button>
@@ -336,8 +339,9 @@ const ReportTab = () => {
               <path d="M5 8l2 2 4-4" stroke="#00E5FF" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <div>
-              <p className="text-biomarker text-sm font-bold">IP-NFT Minted Successfully</p>
-              <p className="text-gray-500 text-xs">Token ID: #4721 · Story Protocol Testnet (Sepolia)</p>
+              <p className="text-biomarker text-sm font-bold">Contribution Recorded Successfully</p>
+              <p className="text-gray-500 text-xs">Contribution ID: #4721 · Ethereum Testnet (Sepolia)</p>
+
             </div>
           </motion.div>
         )}
@@ -465,7 +469,8 @@ const TABS: { key: ResultTab; label: string }[] = [
   { key: 'traits',   label: '80+ Traits' },
   { key: 'pgx',      label: 'Pharmacogenomics' },
   { key: 'prs',      label: 'Risk Scores' },
-  { key: 'report',   label: 'AI Report & IP-NFT' },
+  { key: 'report',   label: 'AI Report & Contribution' },
+
 ];
 
 const ResultsScreen = ({ filename }: { filename: string }) => {

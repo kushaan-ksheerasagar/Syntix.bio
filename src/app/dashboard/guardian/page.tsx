@@ -18,13 +18,15 @@ const DEMO_WALLET = '0x7f2a918c4D3B91a3';
 
 // ─── Sidebar nav ──────────────────────────────────────────────────────────────
 
-type ActiveTab = 'overview' | 'analyser' | 'vault' | 'royalties';
+type ActiveTab = 'overview' | 'analyser' | 'vault' | 'contributions';
+
 
 const NAV_ITEMS: { key: ActiveTab; icon: React.ElementType; label: string }[] = [
   { key: 'overview',  icon: LayoutDashboard, label: 'Overview'       },
   { key: 'analyser',  icon: Dna,             label: 'Genome Analyser'},
   { key: 'vault',     icon: Database,        label: 'IP-NFT Vault'   },
-  { key: 'royalties', icon: Wallet,          label: 'Royalties'      },
+  { key: 'contributions', icon: Wallet,      label: 'Contributions'  },
+
 ];
 
 // ─── Sentinel Score ───────────────────────────────────────────────────────────
@@ -76,7 +78,8 @@ const BlindComputeFeed = () => {
   React.useEffect(() => {
     const messages = [
       { text: 'Verifying ZKP parameters...', type: 'info' },
-      { text: 'Fetching IP-NFT constraints from Story Protocol...', type: 'info' },
+      { text: 'Fetching contribution constraints from Ethereum...', type: 'info' },
+
       { text: 'Running Secure Multi-Party Computation...', type: 'info' },
       { text: 'Result: Biomarker matches normative baseline.', type: 'result' },
       { text: 'Proof sealed — Groth16 ZK-SNARK written on-chain.', type: 'result' },
@@ -133,16 +136,18 @@ const StatCard = ({ label, value, sub, color = 'text-biomarker' }: { label: stri
 
 const IPNFTVaultTab = () => {
   const assets = [
-    { name: 'Genomic Sequence (WGS)',  id: '0x7F...3B92', type: 'DNA',      status: 'Active',  royalty: '12%', earnings: '0.14 ETH' },
-    { name: 'Metabolic Profile Q1',    id: '0x4A...9C11', type: 'Blood',    status: 'Active',  royalty: '8%',  earnings: '0.07 ETH' },
-    { name: 'Longitudinal EHR Data',   id: '0x9B...2D44', type: 'Clinical', status: 'Locked',  royalty: '—',   earnings: '—'        },
-    { name: 'Genome Analysis Report',  id: '0x3E...F710', type: 'Report',   status: 'Pending', royalty: '15%', earnings: '—'        },
+    { name: 'Genomic Sequence (WGS)',  id: '0x7F...3B92', type: 'DNA',      status: 'Active',  usage: '12 uses', earnings: '0.14 ETH' },
+    { name: 'Metabolic Profile Q1',    id: '0x4A...9C11', type: 'Blood',    status: 'Active',  usage: '8 uses',  earnings: '0.07 ETH' },
+    { name: 'Longitudinal EHR Data',   id: '0x9B...2D44', type: 'Clinical', status: 'Locked',  usage: '—',   earnings: '—'        },
+    { name: 'Genome Analysis Report',  id: '0x3E...F710', type: 'Report',   status: 'Pending', usage: '15 uses', earnings: '—'        },
+
   ];
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-white">IP-NFT Vault</h2>
-        <span className="text-xs text-gray-500 border border-white/10 px-3 py-1 rounded-full">Powered by Story Protocol</span>
+        <span className="text-xs text-gray-500 border border-white/10 px-3 py-1 rounded-full">Powered by Ethereum</span>
+
       </div>
       <div className="space-y-3">
         {assets.map((a, i) => (
@@ -158,7 +163,8 @@ const IPNFTVaultTab = () => {
               </p>
             </div>
             <div className="hidden sm:flex items-center gap-6 text-sm">
-              <div className="text-right"><p className="text-xs text-gray-500">Royalty</p><p className="text-white font-medium">{a.royalty}</p></div>
+              <div className="text-right"><p className="text-xs text-gray-500">Usage</p><p className="text-white font-medium">{a.usage}</p></div>
+
               <div className="text-right"><p className="text-xs text-gray-500">Earned</p><p className="text-biomarker font-medium">{a.earnings}</p></div>
             </div>
             <button className="ml-2 flex items-center gap-1.5 text-xs text-gray-400 hover:text-white border border-white/10 hover:border-white/25 px-3 py-2 rounded-lg transition-all">
@@ -175,9 +181,11 @@ const IPNFTVaultTab = () => {
   );
 };
 
-// ─── Royalties Tab ────────────────────────────────────────────────────────────
+// ─── Contributions Tab ────────────────────────────────────────────────────────
 
-const RoyaltiesTab = () => {
+
+const ContributionsTab = () => {
+
   const events = [
     { date: '2026-05-06', from: 'Stanford Genomics Lab',   amount: '0.08 ETH', type: 'WGS License'    },
     { date: '2026-05-04', from: 'Oxford Biobank Research', amount: '0.04 ETH', type: 'Metabolic Data' },
@@ -192,7 +200,8 @@ const RoyaltiesTab = () => {
         <StatCard label="Pending Payouts" value="0.04 ETH" sub="Expected in 2 days"  color="text-white"/>
       </div>
       <div>
-        <h3 className="text-sm font-medium text-gray-400 mb-3 uppercase tracking-widest">Payment History</h3>
+        <h3 className="text-sm font-medium text-gray-400 mb-3 uppercase tracking-widest">Contribution History</h3>
+
         <div className="space-y-2.5">
           {events.map((e, i) => (
             <div key={i} className="flex items-center gap-4 bg-white/[0.02] border border-white/[0.06] rounded-xl px-4 py-3">
@@ -219,7 +228,8 @@ const OverviewTab = ({ onGoToAnalyser }: { onGoToAnalyser: () => void }) => (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
       <StatCard label="Datasets Protected" value="3"       sub="IP-NFTs minted"        color="text-biomarker"/>
       <StatCard label="Sentinel Score"     value="92"      sub="/100 biological health" color="text-biomarker"/>
-      <StatCard label="Total Royalties"    value="0.21 ETH" sub="Lifetime earnings"     color="text-indigo"/>
+      <StatCard label="Total Contributions" value="847"     sub="Lifetime impact"      color="text-indigo"/>
+
       <StatCard label="ZK Proofs"          value="847"     sub="Verifications on-chain" color="text-white"/>
     </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -253,8 +263,9 @@ export default function GuardianDashboard() {
   const PAGE_TITLES: Record<ActiveTab, { h1: string; sub: string }> = {
     overview:  { h1: 'Biological Intelligence',         sub: 'Guardian Node · FHE Encrypted Compute' },
     analyser:  { h1: 'Genome Analyser',                 sub: 'VCF → FHE → Ancestry · Traits · PGx · PRS · AI Report' },
-    vault:     { h1: 'IP-NFT Vault',                    sub: 'Sovereign Biological IP on Story Protocol' },
-    royalties: { h1: 'Royalty Dashboard',               sub: 'On-chain royalty payments from licensed datasets' },
+    vault:         { h1: 'IP-NFT Vault',                    sub: 'Sovereign Biological IP on Ethereum' },
+    contributions: { h1: 'Contribution Dashboard',         sub: 'On-chain contribution records from research' },
+
   };
 
   return (
@@ -323,7 +334,8 @@ export default function GuardianDashboard() {
                 {active === 'overview'  && <OverviewTab onGoToAnalyser={() => setActive('analyser')}/>}
                 {active === 'analyser'  && <GenomeAnalyzer/>}
                 {active === 'vault'     && <IPNFTVaultTab/>}
-                {active === 'royalties' && <RoyaltiesTab/>}
+                {active === 'contributions' && <ContributionsTab/>}
+
               </motion.div>
             </AnimatePresence>
           </div>

@@ -11,7 +11,8 @@ const NAV_LINKS = [
   { href: '/#problem',        label: 'Problem'      },
   { href: '/#mechanism',      label: 'Protocol'     },
   { href: '/#protocol-stack', label: 'Architecture' },
-  { href: '/#roi',            label: 'Economics'    },
+  { href: '/#capabilities', label: 'Capabilities' },
+
   { href: '/about',           label: 'About Us'     },
 ];
 

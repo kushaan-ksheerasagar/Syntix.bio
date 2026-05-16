@@ -105,7 +105,8 @@ export default function AuthPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">Enter as Guardian</h3>
                   <p className="text-base text-gray-400 leading-relaxed mb-10 flex-grow max-w-xs mx-auto">
-                    Take absolute sovereignty over your biological data. Compute blindly. Monetize on your own terms.
+                    Take absolute sovereignty over your biological data. Compute blindly. Control your biological legacy.
+
                   </p>
                   <div className="mt-auto px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-xs font-mono font-semibold uppercase tracking-widest text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.15)]">
                     Personal · Private · Sovereign

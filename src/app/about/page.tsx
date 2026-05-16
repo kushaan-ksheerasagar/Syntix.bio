@@ -25,18 +25,18 @@ export default function AboutPage() {
               role="Cybersecurity & Blockchain Infra"
               description="Specializing in Cybersecurity Engineering and Blockchain Infrastructure. Obsessed with building 'Trustless Health Data' systems where privacy is cryptographically guaranteed, not just promised."
               imageUrl="/alejandra.png"
-              github="https://github.com/"
-              linkedin="https://linkedin.com/"
+              linkedin="https://www.linkedin.com/in/alejandra-catacora-7155931b8"
             />
+
             
             <TeamCard 
               name="Kushaan A Ksheerasagar"
               role="Genomics & Bio-Algorithms"
               description="Biologist focused on genetic algorithms and computational biology. Bridging the gap between raw biological sequences and verifiable, privacy-preserving clinical insights."
               imageUrl="/kushaan.jpg"
-              github="https://github.com/"
-              linkedin="https://linkedin.com/"
+              linkedin="https://www.linkedin.com/in/kushaan-a-ksheerasagar-07194a382"
             />
+
           </div>
         </div>
       </section>

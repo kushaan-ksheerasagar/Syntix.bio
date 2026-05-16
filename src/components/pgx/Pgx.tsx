@@ -14,8 +14,10 @@ const PROBLEM_CARDS = [
   {
     n: '02',
     icon: Coins,
-    headline: 'No royalty mechanism for data contributors',
-    body: 'Data contributors are completely excluded from downstream monetization. Centralised silos become data cemeteries where owners hold zero royalty and zero recourse.',
+    headline: 'No cryptographic contribution record',
+
+    body: 'Data contributors are completely excluded from the research lifecycle. Centralised silos become data cemeteries where owners have no proof of contribution and no recourse.',
+
   },
   {
     n: '03',
@@ -54,7 +56,8 @@ export const Pgx = () => {
             <strong className="font-bold">is a clinical liability.</strong>
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed font-light">
-            Traditional biobanks treat your biology as a static commodity — hoarding data that decays, without provenance, without your consent, without royalties.
+            Traditional biobanks treat your biology as a static commodity — hoarding data that decays, without provenance, without your consent, without credit.
+
           </p>
         </FadeIn>
 

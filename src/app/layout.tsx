@@ -4,6 +4,8 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar, Footer, CookieBanner, Chatbot } from '@/components/shared';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 
 
 const geistSans = localFont({
@@ -44,6 +46,8 @@ export default function RootLayout({
         <CookieBanner />
         <Chatbot />
         <Analytics />
+        <SpeedInsights />
+
 
       </body>
     </html>
