@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar, Footer, CookieBanner, Chatbot } from '@/components/shared';
+import { Analytics } from "@vercel/analytics/react";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,6 +43,8 @@ export default function RootLayout({
         <Footer />
         <CookieBanner />
         <Chatbot />
+        <Analytics />
+
       </body>
     </html>
   );
